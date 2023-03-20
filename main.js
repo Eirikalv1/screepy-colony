@@ -7,7 +7,7 @@ module.exports.loop = function () {
 	clearDeadMemory();
 
 	let minHarvesters = 10;
-	let minUpgraders = 1;
+	let minUpgraders = 2;
 	let minBuilders = 1;
 	let minRepairers = 2;
 
