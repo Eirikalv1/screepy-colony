@@ -53,7 +53,7 @@ function clearDeadMemory() {
 function spawnCreep(role) {
 	let name = Game.spawns["Spawn1"].spawnCreep(
 		[WORK, WORK, CARRY, MOVE],
-		role + (_.sum(Game.creeps, (c) => c.memory.role == role) + 1),
+		role + Math.floor(Math.random() * 1000),
 		{
 			memory: {
 				role,
