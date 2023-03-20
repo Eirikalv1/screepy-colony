@@ -14,7 +14,9 @@ module.exports = {
 				creep.moveTo(creep.room.controller);
 			}
 		} else {
-			let source = creep.pos.findClosestByPath(FIND_SOURCES);
+			let source = creep.pos.findClosestByPath(FIND_SOURCES, {
+				filter: (s) => s.pos.x == 34 && s.pos.y == 17,
+			});
 			if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
 				creep.moveTo(source);
 			}

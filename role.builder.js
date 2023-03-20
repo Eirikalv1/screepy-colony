@@ -21,7 +21,9 @@ module.exports = {
 				roleUpgrader.run(creep);
 			}
 		} else {
-			let source = creep.pos.findClosestByPath(FIND_SOURCES);
+			let source = creep.pos.findClosestByPath(FIND_SOURCES, {
+				filter: (s) => s.pos.x == 11 && s.pos.y == 44,
+			});
 			if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
 				creep.moveTo(source);
 			}
