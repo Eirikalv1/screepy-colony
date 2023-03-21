@@ -6,7 +6,7 @@ let roleRepairer = require("role.repairer");
 module.exports.loop = function () {
 	clearDeadMemory();
 
-	let minHarvesters = 4;
+	let minHarvesters = 5;
 	let minUpgraders = 2;
 	let minBuilders = 1;
 	let minRepairers = 2;
