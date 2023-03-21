@@ -51,8 +51,15 @@ function clearDeadMemory() {
 }
 
 function spawnCreep(role) {
+	if (_.sum(Game.creeps, (c) => c.memory.role == "harvester") > 2) {
+		var properties = [WORK, WORK, WORK, CARRY, CARRY, MOVE, MOVE, MOVE];
+	} else {
+		var properties = [WORK, WORK, CARRY, MOVE];
+	}
+
+
 	let name = Game.spawns["Spawn1"].spawnCreep(
-		[WORK, WORK, CARRY, MOVE],
+		properties,
 		role + Math.floor(Math.random() * 1000),
 		{
 			memory: {
