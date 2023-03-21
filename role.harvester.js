@@ -10,9 +10,11 @@ module.exports = {
 		}
 
 		if (creep.memory.working) {
-			let spawn = creep.pos.findClosestByPath(FIND_MY_SPAWNS);
-			if (creep.transfer(spawn, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-				creep.moveTo(spawn);
+			let structure = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
+				filter: (s) => (s.structureType == STRUCTURE_EXTENSION || s.structureType == STRUCTURE_SPAWN) && s.energy < s.energyCapacity
+			});
+			if (creep.transfer(structure, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+				creep.moveTo(structure);
 			}
 		} else {
 			let source = creep.pos.findClosestByPath(FIND_SOURCES, {
