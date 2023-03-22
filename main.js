@@ -52,7 +52,7 @@ function clearDeadMemory() {
 
 function spawnCreep(role) {
 	if (_.sum(Game.creeps, (c) => c.memory.role == "harvester") > 2) {
-		var properties = [WORK, WORK, WORK, CARRY, CARRY, MOVE, MOVE, MOVE];
+		var properties = [WORK, WORK, WORK, WORK, WORK, WORK, WORK, WORK, CARRY, CARRY, CARRY, CARRY, MOVE, MOVE, MOVE, MOVE, MOVE, MOVE];
 	} else {
 		var properties = [WORK, WORK, CARRY, MOVE];
 	}
