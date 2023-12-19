@@ -1,3 +1,3 @@
 # screepy-colony
 
-Cobebase for my screeps in Screeps World
+Codebase for my screeps in Screeps World
